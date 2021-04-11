@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import Pokedex from './Pokedex';
 import Pokemon from './Pokemon';
 import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
@@ -25,6 +25,7 @@ function App() {
   const classes = useStyles();
 
   return (
+    <HashRouter basename="/">
     <ThemeProvider theme={darkMode ? themes.darkTheme : themes.lightTheme}>
       <Paper square className={classes.principalPaper}>
         <Switch>
@@ -43,6 +44,7 @@ function App() {
         </Switch>
       </Paper>
     </ThemeProvider>
+    </HashRouter>
   );
 }
 export default App;
