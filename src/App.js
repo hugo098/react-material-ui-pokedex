@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Pokedex from './Pokedex';
+import Pokemon from './Pokemon';
+import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
+import { Paper } from '@material-ui/core';
+import themes from './themes';
+import { createMuiTheme } from '@material-ui/core/styles';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+  
+  const themeModeHandler = () => {
+    setDarkMode(!darkMode);
+  };
+  const useStyles = makeStyles({
+    principalPaper: {
+      background: /*(theme.palette.type === "dark")*/darkMode ? '#303030' : '#bdbdbd',
+      minHeight: '100vh',
+      minWidth: '100%',
+      margin: '0',
+      padding: '0'
+    }
+  });
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={darkMode ? themes.darkTheme : themes.lightTheme}>
+      <Paper square className={classes.principalPaper}>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={(props) => <Pokedex darkMode={darkMode} themeModeHandler={themeModeHandler} {...props} />}
+          />
+          <Route
+            exact
+            path="/:pokemonId"
+            render={(props) => <Pokemon {...props} />}
+          />
+          <Route render={(props) => <div>Not found</div>}/>
+            
+        </Switch>
+      </Paper>
+    </ThemeProvider>
   );
 }
-
 export default App;
