@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/react-material-ui-pokedex/static/js/main.f96a3c83.chunk.js",
+    "main.js.map": "/react-material-ui-pokedex/static/js/main.f96a3c83.chunk.js.map",
+    "runtime-main.js": "/react-material-ui-pokedex/static/js/runtime-main.90fddbc0.js",
+    "runtime-main.js.map": "/react-material-ui-pokedex/static/js/runtime-main.90fddbc0.js.map",
+    "static/js/2.a036673a.chunk.js": "/react-material-ui-pokedex/static/js/2.a036673a.chunk.js",
+    "static/js/2.a036673a.chunk.js.map": "/react-material-ui-pokedex/static/js/2.a036673a.chunk.js.map",
+    "static/js/3.46d400a1.chunk.js": "/react-material-ui-pokedex/static/js/3.46d400a1.chunk.js",
+    "static/js/3.46d400a1.chunk.js.map": "/react-material-ui-pokedex/static/js/3.46d400a1.chunk.js.map",
+    "index.html": "/react-material-ui-pokedex/index.html",
+    "static/js/2.a036673a.chunk.js.LICENSE.txt": "/react-material-ui-pokedex/static/js/2.a036673a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.90fddbc0.js",
+    "static/js/2.a036673a.chunk.js",
+    "static/js/main.f96a3c83.chunk.js"
+  ]
+}
